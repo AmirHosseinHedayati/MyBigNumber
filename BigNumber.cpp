@@ -397,3 +397,23 @@ BigNumber BigNumber:: operator>>( unsigned shift ){
     }
     return temp;
 }
+
+BigNumber operator-( const BigNumber & num1, const BigNumber & num2){
+    BigNumber sum;
+    if(num1.sign != num2.sign){
+        sum = BigNumber:: unsignedAdd(num1, num2);
+        sum.sign = num1.sign;
+    }
+    else{
+        sum = BigNumber::unsignedSubtract(num1, num2);
+        sum.sign = BigNumber::unsignedMax(num1, num2).sign;
+    }
+    if( sum.numOfDigits == 1 && sum[0] == 0 ){
+        sum.sign = true;
+    }
+    return sum;
+}
+
+
+
+
