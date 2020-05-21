@@ -398,6 +398,7 @@ BigNumber BigNumber:: operator>>( unsigned shift ){
     return temp;
 }
 
+
 BigNumber operator-( const BigNumber & num1, const BigNumber & num2){
     BigNumber sum;
     if(num1.sign != num2.sign){
@@ -434,4 +435,9 @@ BigNumber BigNumber::operator++ (int){
     BigNumber temp{*this};
    *this = *this+1;
 return temp;
+}
+
+BigNumber& BigNumber::operator +=(const BigNumber& myBig){
+*this = *this + myBig;
+ return *this;
 }

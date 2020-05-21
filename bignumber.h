@@ -10,7 +10,7 @@ class BigNumber {
     friend std::istream& operator>>( std::istream & input, BigNumber & myBig );
     friend BigNumber operator+( const BigNumber & num1, const BigNumber & num2);
     friend BigNumber operator-( const BigNumber & num1, const BigNumber & num2);
-private:
+protected:
     bool sign;
     int8_t * numArray = nullptr;
     unsigned numOfDigits;
@@ -24,6 +24,7 @@ private:
     //max(a, b)    a.max(b)
 
 public:
+
     //must be private
     static BigNumber unsignedMax( const BigNumber& num1, const BigNumber& num2);
     static BigNumber unsignedMin( const BigNumber& num1, const BigNumber& num2);
@@ -59,6 +60,7 @@ public:
     BigNumber operator++ (int);
     BigNumber absoluteValue() const;
     BigNumber operator>>( unsigned shift );
+    BigNumber& operator +=(const BigNumber& myBig);
 };
 
 
