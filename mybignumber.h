@@ -13,6 +13,11 @@ public:
       }
       return sum;
 }
+MyBigNumber (){}
+MyBigNumber (const char * myCharArray);
+MyBigNumber( const std::string & str );
+MyBigNumber(const long & intNum );
+BigNumber operator<<( unsigned shift );
 
 };
 #endif // MYBIGNUMBER_H
