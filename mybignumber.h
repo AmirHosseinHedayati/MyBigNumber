@@ -18,5 +18,8 @@ MyBigNumber (const char * myCharArray);
 MyBigNumber( const std::string & str );
 MyBigNumber(const long & intNum );
 MyBigNumber operator<<( unsigned shift );
+MyBigNumber power (unsigned powStep);
+MyBigNumber& operator *=( MyBigNumber& myBig);
+
 };
 #endif // MYBIGNUMBER_H

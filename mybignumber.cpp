@@ -39,5 +39,21 @@ else{
 return temp;
 }
 
+MyBigNumber MyBigNumber::power (unsigned powStep){
+    MyBigNumber temp;
+    if (powStep == 0){
+        temp=1;
+    }
+    for(size_t i = 0 ; i<powStep ; i++){
+        temp*=temp;
+    }
+    return temp;
+}
+
+MyBigNumber& MyBigNumber::operator*=(MyBigNumber& myBig){
+    *this = *this * (myBig);
+    return *this;
+
+}
 
 
