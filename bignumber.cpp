@@ -441,3 +441,9 @@ BigNumber& BigNumber::operator +=(const BigNumber& myBig){
 *this = *this + myBig;
  return *this;
 }
+
+void BigNumber::setSign(bool sign) {
+    this->sign = sign;
+}
+
+

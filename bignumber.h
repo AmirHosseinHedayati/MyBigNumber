@@ -61,6 +61,7 @@ public:
     BigNumber absoluteValue() const;
     BigNumber operator>>( unsigned shift );
     BigNumber& operator +=(const BigNumber& myBig);
+    void setSign(bool sign);
 };
 
 

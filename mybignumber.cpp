@@ -8,7 +8,7 @@ MyBigNumber::MyBigNumber( const std::string & str )
 MyBigNumber::MyBigNumber(const long & intNum )
     :BigNumber(intNum ){}
 
-BigNumber MyBigNumber::operator<<( unsigned shift ){
+MyBigNumber MyBigNumber::operator<<( unsigned shift ){
     MyBigNumber temp;
 
     temp.sign = sign;
@@ -23,4 +23,21 @@ BigNumber MyBigNumber::operator<<( unsigned shift ){
         }
         return  temp;
 }
+
+MyBigNumber operator*(MyBigNumber& myBig1 ,MyBigNumber& myBig2){
+ MyBigNumber temp;
+for (int i = 0 ; i<myBig2.numOfDigits ; i++){
+    temp+=MyBigNumber::multByOneDigit(myBig1 , myBig2.numArray[i]);
+   (myBig1<<i);
+  }
+if(myBig1.getSign()== myBig2.getSign()){
+    temp.setSign(true);
+}
+else{
+    temp.setSign(false);
+}
+return temp;
+}
+
+
 
