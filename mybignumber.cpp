@@ -70,3 +70,12 @@ for (size_t i = 0; i < powerStep; i++){
 }
 return temp;
 }
+
+MyBigNumber MyBigNumber::operator()(const unsigned num1 , const unsigned num2){
+    MyBigNumber temp = "0";
+    temp.numOfDigits= num2;
+    for(size_t i = num1 ; i<num1+num2 ; i++){
+        temp[i-num1] = numArray[i];
+    }
+    return temp;
+}

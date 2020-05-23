@@ -22,6 +22,7 @@ MyBigNumber(const long & intNum );
 MyBigNumber operator<<( unsigned shift );
 //MyBigNumber power (unsigned powStep);
 MyBigNumber& operator *=( MyBigNumber& myBig);
+MyBigNumber operator ()(const unsigned num1 , const unsigned num2);
 
 };
 #endif // MYBIGNUMBER_H
