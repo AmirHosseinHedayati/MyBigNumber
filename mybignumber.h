@@ -7,7 +7,7 @@ friend MyBigNumber operator*(  MyBigNumber &myBig1 ,  MyBigNumber &myBig2);
 
 public:
     static MyBigNumber multByOneDigit (MyBigNumber myBig , int num){
-        MyBigNumber sum;
+        MyBigNumber sum = "0";
       for(size_t i = 0 ; i < num; ++i){
        sum += myBig;
       }

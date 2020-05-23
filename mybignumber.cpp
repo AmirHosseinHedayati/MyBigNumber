@@ -9,7 +9,7 @@ MyBigNumber::MyBigNumber(const long & intNum )
     :BigNumber(intNum ){}
 
 MyBigNumber MyBigNumber::operator<<( unsigned shift ){
-    MyBigNumber temp;
+    MyBigNumber temp = "0";
 
     temp.sign = sign;
     temp.numOfDigits = numOfDigits + shift;
@@ -25,10 +25,12 @@ MyBigNumber MyBigNumber::operator<<( unsigned shift ){
 }
 
 MyBigNumber operator*(MyBigNumber& myBig1 ,MyBigNumber& myBig2){
- MyBigNumber temp;
+ MyBigNumber temp  = "0";
+ MyBigNumber temp2 = "0";
 for (int i = 0 ; i<myBig2.numOfDigits ; i++){
-    temp+=MyBigNumber::multByOneDigit(myBig1 , myBig2.numArray[i]);
-   (myBig1<<i);
+   temp2 = MyBigNumber::multByOneDigit(myBig1 , myBig2.numArray[i]);
+   temp2 = (temp2<<i);
+    temp+=temp2;
   }
 if(myBig1.getSign()== myBig2.getSign()){
     temp.setSign(true);
@@ -40,7 +42,7 @@ return temp;
 }
 
 MyBigNumber MyBigNumber::power (unsigned powStep){
-    MyBigNumber temp;
+    MyBigNumber temp = "0";
     if (powStep == 0){
         temp=1;
     }
@@ -53,7 +55,6 @@ MyBigNumber MyBigNumber::power (unsigned powStep){
 MyBigNumber& MyBigNumber::operator*=(MyBigNumber& myBig){
     *this = *this * (myBig);
     return *this;
-
 }
 
 
