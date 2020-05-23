@@ -13,12 +13,14 @@ public:
       }
       return sum;
 }
+
+static MyBigNumber power( MyBigNumber& num1, unsigned num2);
 MyBigNumber (){}
 MyBigNumber (const char * myCharArray);
 MyBigNumber( const std::string & str );
 MyBigNumber(const long & intNum );
 MyBigNumber operator<<( unsigned shift );
-MyBigNumber power (unsigned powStep);
+//MyBigNumber power (unsigned powStep);
 MyBigNumber& operator *=( MyBigNumber& myBig);
 
 };

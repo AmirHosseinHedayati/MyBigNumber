@@ -41,7 +41,7 @@ else{
 return temp;
 }
 
-MyBigNumber MyBigNumber::power (unsigned powStep){
+/*MyBigNumber MyBigNumber::power (unsigned powStep){
     MyBigNumber temp = "0";
     if (powStep == 0){
         temp=1;
@@ -49,12 +49,24 @@ MyBigNumber MyBigNumber::power (unsigned powStep){
     for(size_t i = 0 ; i<powStep ; i++){
         temp*=temp;
     }
+    if(powStep % 2 == 0){
+        temp.setSign(true);
+    }
+    else{
+        temp.setSign(sign);
+    }
     return temp;
-}
+}*/
 
 MyBigNumber& MyBigNumber::operator*=(MyBigNumber& myBig){
     *this = *this * (myBig);
     return *this;
 }
 
-
+MyBigNumber MyBigNumber::power(MyBigNumber& myBig, unsigned powerStep){
+MyBigNumber temp = 1;
+for (size_t i = 0; i < powerStep; i++){
+    temp *= myBig;
+}
+return temp;
+}
