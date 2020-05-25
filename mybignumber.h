@@ -3,8 +3,8 @@
 #include "BigNumber.h"
 
 class MyBigNumber : public BigNumber{
-friend MyBigNumber operator*(  MyBigNumber &myBig1 ,  MyBigNumber &myBig2);
-
+friend MyBigNumber operator*(  MyBigNumber &myBig1 , MyBigNumber &myBig2);
+friend MyBigNumber operator/( MyBigNumber &myBig1 ,  MyBigNumber &myBig2);
 public:
 
 static MyBigNumber multByOneDigit (MyBigNumber &myBig , int num);
